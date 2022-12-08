@@ -14,7 +14,7 @@ var includeSymbol = window.confirm("Include symbols?")
 var includeNumber = window.confirm("Include numbers?")
 }  
 
-do  {
+
   //start for loop to loop through options?
  for (var i = 0; i < desiredLength; i++) {
 
@@ -58,7 +58,7 @@ randomPassword = randomPassword.concat(includeNumber)
    }
 
   }
-}while (randomPassword.length < desiredLength);
+
 return randomPassword;
 } 
 
