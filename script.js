@@ -15,13 +15,14 @@ var includeUpper = window.confirm("Include uppercase letters?")
 var includeLower = window.confirm("Include lowercase letters?")
 var includeSymbol = window.confirm("Include symbols?")
 var includeNumber = window.confirm("Include lowercase letters?")
+}  
 
+do  {
   //start for loop to loop through options?
  for (var i = 0; i < desiredLength; i++) {
 
   
 //choose whether or not to include uppercase
-
 if (includeUpper) {
 includeUpper = Math.floor((Math.random() * 26) + 65);
 //convert to letter in ascii table
@@ -31,7 +32,6 @@ randomPassword = randomPassword.concat(includeUpper)
 
 
 //choose whether or not to include lowercase
-
 if (includeLower) {
 includeLower = Math.floor((Math.random() * 26) + 97);
 includeLower = String.fromCharCode(includeLower);
@@ -39,7 +39,6 @@ randomPassword = randomPassword.concat(includeLower)
 }
 
 //choose whether or not to include special characters
-
 if (includeSymbol) {
 includeSymbol = Math.floor((Math.random() * 15) + 33);
 var includeSymbol = String.fromCharCode(includeSymbol);
@@ -47,7 +46,6 @@ randomPassword = randomPassword.concat(includeSymbol)
 }
 
 //choose whether or not to include numbers
-
 if (includeNumber) {
 includeNumber = Math.floor((Math.random() * 10) + 48);
 var includeNumber = String.fromCharCode(includeNumber);
@@ -58,23 +56,10 @@ randomPassword = randomPassword.concat(includeNumber)
    if (!includeUpper && !includeLower && !includeSymbol && !includeNumber) {
     window.alert("You must pick at least one criteria!");
    }
-   
   }
-}
+} while (randomPassword.length < desiredLength);
 return randomPassword;
 }
-  //  else if (includeUpper, includeLower, includeSymbol, includeNumber) {
-  //   for (var i = 0; i < desiredLength; i++) {
-  //   randomPassword = randomNumber.concat(randomSymbol, randomLower, randomUpper)
-  //  }
-  // }
-  //  else if (!includeUpper, includeLower, includeSymbol, includeNumber) {
-  //   randomPassword = randomNumber.concat(randomSymbol, randomLower)
-   
-   
-  // } 
-  //  return randomPassword;
-
 
 
 
