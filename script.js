@@ -5,9 +5,10 @@ var randomPassword = ""
 //prompt user to input password length between 8-128 
  var desiredLength = window.prompt("Choose a password length from 8-128");
  if (desiredLength < 8 || desiredLength > 128) {
-  alert("invalid input")
+  return "Please choose valid number between 8 and 128!";
  }  
 else {
+  //prompt user to choose criteria
 var includeUpper = window.confirm("Include uppercase letters?")
 var includeLower = window.confirm("Include lowercase letters?")
 var includeSymbol = window.confirm("Include symbols?")
@@ -19,25 +20,28 @@ var includeNumber = window.confirm("Include numbers?")
  for (var i = 0; i < desiredLength; i++) {
 
 
-//choose whether or not to include uppercase
+//if uppercase is chosen, generate random uppercase letter
 
 if (includeUpper && randomPassword.length < desiredLength) {
+  //choose a random number between 1 and 26 and add 65 to get uppercase letter numbers in ascii
 includeUpper = Math.floor((Math.random() * 26) + 65);
 //convert to letter in ascii table
 includeUpper = String.fromCharCode(includeUpper);
+//add random uppercase letter to randomPassword
 randomPassword = randomPassword.concat(includeUpper)
 }
 
 
-//choose whether or not to include lowercase
+//if lowercase is chosen, generate random lowercase letter
 
 if (includeLower && randomPassword.length < desiredLength) {
 includeLower = Math.floor((Math.random() * 26) + 97);
+
 includeLower = String.fromCharCode(includeLower);
 randomPassword = randomPassword.concat(includeLower)
 }
 
-//choose whether or not to include special characters
+//if uppercase is chosen, generate random symbol
 
 if (includeSymbol && randomPassword.length < desiredLength) {
 includeSymbol = Math.floor((Math.random() * 15) + 33);
@@ -45,7 +49,7 @@ var includeSymbol = String.fromCharCode(includeSymbol);
 randomPassword = randomPassword.concat(includeSymbol)
 }
 
-//choose whether or not to include numbers
+//if uppercase is chosen, generate random number
 
 if (includeNumber && randomPassword.length < desiredLength) {
 includeNumber = Math.floor((Math.random() * 10) + 48);
@@ -54,30 +58,11 @@ randomPassword = randomPassword.concat(includeNumber)
   }
 //at least one character type must be chosen
    if (!includeUpper && !includeLower && !includeSymbol && !includeNumber) {
-    window.alert("You must pick at least one criteria!");
+     return "You must pick at least one criteria!";
    }
-
   }
-
 return randomPassword;
 } 
-
-
-
-  //  else if (includeUpper, includeLower, includeSymbol, includeNumber) {
-  //   for (var i = 0; i < desiredLength; i++) {
-  //   randomPassword = randomNumber.concat(randomSymbol, randomLower, randomUpper)
-  //  }
-  // }
-  //  else if (!includeUpper, includeLower, includeSymbol, includeNumber) {
-  //   randomPassword = randomNumber.concat(randomSymbol, randomLower)
-
-
-  // } 
-  //  return randomPassword;
-
-
-
 
 // Write password to the #password input
 function writePassword() {
