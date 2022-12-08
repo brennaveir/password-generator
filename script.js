@@ -11,7 +11,7 @@ else {
 var includeUpper = window.confirm("Include uppercase letters?")
 var includeLower = window.confirm("Include lowercase letters?")
 var includeSymbol = window.confirm("Include symbols?")
-var includeNumber = window.confirm("Include lowercase letters?")
+var includeNumber = window.confirm("Include numbers?")
 }  
 
 do  {
